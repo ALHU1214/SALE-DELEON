@@ -59,13 +59,13 @@ a{color:inherit}a:hover{color:inherit}
       </a>
     </div>
   </div>
-<img src="sale-guy.png" alt="" id="guyL" style="position: absolute; left: -1px; z-index: 2; animation: float 7s ease-in-out infinite; filter: drop-shadow(0 1.8cqh 2cqh rgba(0,0,0,.35)); top: 356px; width: 100%">
+<img src="sale-guy.png" alt="" id="guyL" style="position: absolute; left: -1px; z-index: 2; animation: float 7s ease-in-out infinite; filter: drop-shadow(0 1.8cqh 2cqh rgba(0,0,0,.35)); top: 300px; width: 100%">
   <sc-if value="{{ hasPreview }}" hint-placeholder-val="{{ false }}">
     <audio ref="{{ audioRef }}" src="{{ previewAudioUrl }}" loop="true" autoPlay="true"></audio>
   </sc-if>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;spotifyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://open.spotify.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Enlaces&quot;},&quot;previewAudioUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;preview-clip.mp3&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Enlaces&quot;},&quot;instagramUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.instagram.com/reel/DbN7JZXtITe/?igsh=MW02OGZic2MwbjV2eA==&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Enlaces&quot;},&quot;tiktokUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.tiktok.com/@deleon3316?_r=1&amp;_t=ZG-98PtQlCNyXA&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Enlaces&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;spotifyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://ditto.fm/sale-deleon&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Enlaces&quot;},&quot;previewAudioUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;preview-clip.mp3&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Enlaces&quot;},&quot;instagramUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.instagram.com/reel/DbN7JZXtITe/?igsh=MW02OGZic2MwbjV2eA==&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Enlaces&quot;},&quot;tiktokUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.tiktok.com/@deleon3316?_r=1&amp;_t=ZG-98PtQlCNyXA&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Enlaces&quot;}}">
 class Component extends DCLogic {
   parallaxRef = React.createRef();
   audioRef = React.createRef();
