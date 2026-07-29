@@ -18,10 +18,15 @@ a{color:inherit}a:hover{color:inherit}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.4cqh)}}
 @keyframes ctaPulse{0%,100%{box-shadow:0 0 0 0 rgba(30,215,96,.55)}70%{box-shadow:0 0 0 4.5cqw rgba(30,215,96,0)}}
 @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:.15}}
-@keyframes doublePulse{0%{transform:translate(-50%,-50%) scale(1);opacity:.9}100%{transform:translate(-50%,-50%) scale(1.6);opacity:0}}
+@keyframes neonFlash{0%,19%,21%,54%,56%,100%{text-shadow:0 0 0.6cqw #fff,0 0 1.6cqw #FF2A2A,0 0 3cqw #FF2A2A,0 0 5.5cqw rgba(255,42,42,.8)}20%,55%{text-shadow:0 0 0.2cqw rgba(255,255,255,.2)}}
+@keyframes dropBounce{0%{transform:translateY(-65cqh);opacity:0}55%{transform:translateY(3cqh);opacity:1}75%{transform:translateY(-1.5cqh)}90%{transform:translateY(0.6cqh)}100%{transform:translateY(0)}}
+@keyframes waveBar1{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
+@keyframes waveBar2{0%,100%{transform:scaleY(.9)}50%{transform:scaleY(.3)}}
+@keyframes waveBar3{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1)}}
+@keyframes neonPulse{0%,100%{filter:brightness(1) drop-shadow(0 0 1.5cqw rgba(255,255,255,.15))}50%{filter:brightness(1.35) drop-shadow(0 0 3.5cqw rgba(255,60,120,.55))}}
 </style>
 </helmet>
-<div id="phone" style="position:relative;width:min(440px,100vw);height:100dvh;max-height:calc((100vw)*2.03);margin:0 auto;background:#f4f2ed url(bg-escaparate.png) center/cover no-repeat;overflow:hidden;font-family:Archivo,sans-serif;box-shadow:0 0 60px rgba(0,0,0,.5)" data-screen-label="Landing">
+<div id="phone" style="position:relative;width:min(440px,100vw);height:100dvh;max-height:calc((100vw)*1.778);margin:0 auto;background:#f4f2ed url(bg-escaparate.png) center/cover no-repeat;overflow:hidden;font-family:Archivo,sans-serif;box-shadow:0 0 60px rgba(0,0,0,.5)" data-screen-label="Landing">
   <div style="position:absolute;inset:0;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E&quot;);opacity:.07;pointer-events:none;z-index:4"></div>
   <div style="position:absolute;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;padding:2.4cqh 4cqw;font-weight:800;font-size:2.9cqw;letter-spacing:0.22em;color:#141414;z-index:3" id="topbar">
     <span>DELEON</span><span>NUEVO SINGLE</span><span>06 AGOSTO</span>
@@ -51,17 +56,26 @@ a{color:inherit}a:hover{color:inherit}
     </a>
     <div id="tagline" style="font-size:2.2cqw;letter-spacing:0.1em;color:rgba(255,255,255,.55);font-weight:600;white-space:nowrap">SÉ EL PRIMERO EN ESCUCHARLA</div>
     <div style="display:flex;align-items:center;gap:5cqw">
-      <a href="{{ instagramUrl }}" target="_blank" aria-label="Instagram" style="color:rgba(255,255,255,.75);display:flex" style-hover="color:#1ED760">
+      <a href="{{ instagramUrl }}" target="_blank" aria-label="Instagram" style="color:rgba(255,255,255,.75);display:flex" style-hover="color:#E1306C" style-active="color:#E1306C">
         <svg viewBox="0 0 24 24" style="width:5.2cqw;height:5.2cqw;fill:none;stroke:currentColor;stroke-width:1.8"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg>
       </a>
-      <a href="{{ tiktokUrl }}" target="_blank" aria-label="TikTok" style="color:rgba(255,255,255,.75);display:flex" style-hover="color:#1ED760">
+      <a href="{{ tiktokUrl }}" target="_blank" aria-label="TikTok" style="color:rgba(255,255,255,.75);display:flex" style-hover="color:#25F4EE" style-active="color:#25F4EE">
         <svg viewBox="0 0 24 24" style="width:5.2cqw;height:5.2cqw;fill:currentColor"><path d="M16.6 5.2c.6 1.4 1.8 2.5 3.4 2.8v2.6c-1.3 0-2.5-.4-3.5-1v6.3c0 2.7-2.2 4.9-5 4.9s-5-2.2-5-4.9 2.2-4.9 5-4.9c.3 0 .6 0 .9.1v2.7a2.3 2.3 0 1 0 1.6 2.1V3h2.4c.1.8.2 1.5.2 2.2z"></path></svg>
       </a>
     </div>
   </div>
-<img src="sale-guy.png" alt="" id="guyL" style="position: absolute; left: -1px; z-index: 2; animation: float 7s ease-in-out infinite; filter: drop-shadow(0 1.8cqh 2cqh rgba(0,0,0,.35)); top: 280px; width: 100%">
+<sc-if value="{{ !showTapHint }}" hint-placeholder-val="{{ false }}">
+    <img src="sale-guy.png" alt="" id="guyL" style="position: absolute; left: -1px; z-index: 2; animation: dropBounce .9s cubic-bezier(.34,1.56,.64,1) forwards, float 7s ease-in-out infinite .9s; filter: drop-shadow(0 1.8cqh 2cqh rgba(0,0,0,.35)); bottom: 29cqh; width: 100%">
+  </sc-if>
   <sc-if value="{{ hasPreview }}" hint-placeholder-val="{{ false }}">
     <audio ref="{{ audioRef }}" src="{{ previewAudioUrl }}" loop="true" autoPlay="true"></audio>
+  </sc-if>
+  <sc-if value="{{ showTapHint }}" hint-placeholder-val="{{ true }}">
+    <div onClick="{{ activateAudio }}" style="position:absolute;inset:0;z-index:6;display:flex;align-items:center;justify-content:center;pointer-events:auto;cursor:pointer">
+      <div style="position:absolute;bottom:50cqh;display:flex;align-items:center;justify-content:center;color:#FF2A2A;font-weight:800;font-size:3.4cqw;letter-spacing:.08em;padding:2.4cqw 4.6cqw;animation:neonFlash 3.5s ease-in-out infinite">
+        TOCA PARA ACTIVAR EL SONIDO
+      </div>
+    </div>
   </sc-if>
 </div>
 </x-dc>
@@ -69,7 +83,12 @@ a{color:inherit}a:hover{color:inherit}
 class Component extends DCLogic {
   parallaxRef = React.createRef();
   audioRef = React.createRef();
-  state = { cd: this.calc(), playing: false };
+  state = { cd: this.calc(), playing: false, showTapHint: true };
+  activateAudio = () => {
+    const a = this.audioRef.current;
+    if (a) { a.play().catch(() => {}); }
+    this.setState({ showTapHint: false });
+  };
   togglePreview = () => {
     const a = this.audioRef.current;
     if (!a || !a.src) { this.demoToggle(); return; }
@@ -107,10 +126,17 @@ class Component extends DCLogic {
       });
     };
     setTimeout(tryPlay, 50);
+    const a = this.audioRef.current;
+    if (a) {
+      this.onAudioPlaying = () => this.setState({ playing: true, showTapHint: false });
+      a.addEventListener('play', this.onAudioPlaying);
+    }
   }
   componentWillUnmount() {
     window.removeEventListener('mousemove', this.onMove);
     clearInterval(this.tick);
+    const a = this.audioRef.current;
+    if (a && this.onAudioPlaying) a.removeEventListener('play', this.onAudioPlaying);
   }
   renderVals() {
     return {
@@ -127,6 +153,8 @@ class Component extends DCLogic {
         ? React.createElement('path', { d: 'M6 5h4v14H6zm8 0h4v14h-4z' })
         : React.createElement('path', { d: 'M8 5v14l11-7z' }),
       playing: this.state.playing,
+      showTapHint: this.state.showTapHint,
+      activateAudio: this.activateAudio,
       parallaxRef: this.parallaxRef,
       cd: this.state.cd
     };
