@@ -18,7 +18,7 @@ a{color:inherit}a:hover{color:inherit}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.4cqh)}}
 @keyframes ctaPulse{0%,100%{box-shadow:0 0 0 0 rgba(30,215,96,.55)}70%{box-shadow:0 0 0 4.5cqw rgba(30,215,96,0)}}
 @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:.15}}
-@keyframes neonFlash{0%,19%,21%,54%,56%,100%{text-shadow:0 0 0.6cqw #fff,0 0 1.6cqw #FF2A2A,0 0 3cqw #FF2A2A,0 0 5.5cqw rgba(255,42,42,.8)}20%,55%{text-shadow:0 0 0.2cqw rgba(255,255,255,.2)}}
+@keyframes neonFlash{0%,100%{text-shadow:0 0 0.4cqw #fff,0 0 1cqw #00E5FF,0 0 1.8cqw rgba(0,229,255,.7),0 0 3cqw rgba(0,229,255,.3)}50%{text-shadow:0 0 0.3cqw #fff,0 0 0.7cqw #00E5FF,0 0 1.2cqw rgba(0,229,255,.5),0 0 2cqw rgba(0,229,255,.2)}}
 @keyframes dropBounce{0%{transform:translateY(-65cqh);opacity:0}55%{transform:translateY(3cqh);opacity:1}75%{transform:translateY(-1.5cqh)}90%{transform:translateY(0.6cqh)}100%{transform:translateY(0)}}
 @keyframes waveBar1{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
 @keyframes waveBar2{0%,100%{transform:scaleY(.9)}50%{transform:scaleY(.3)}}
@@ -72,8 +72,11 @@ a{color:inherit}a:hover{color:inherit}
   </sc-if>
   <sc-if value="{{ showTapHint }}" hint-placeholder-val="{{ true }}">
     <div onClick="{{ activateAudio }}" style="position:absolute;inset:0;z-index:6;display:flex;align-items:center;justify-content:center;pointer-events:auto;cursor:pointer">
-      <div style="position:absolute;bottom:50cqh;display:flex;align-items:center;justify-content:center;color:#FF2A2A;font-weight:800;font-size:3.4cqw;letter-spacing:.08em;padding:2.4cqw 4.6cqw;animation:neonFlash 3.5s ease-in-out infinite">
-        TOCA PARA ACTIVAR EL SONIDO
+      <div style="position:absolute;bottom:50cqh;display:flex;flex-direction:column;align-items:center;gap:1.2cqh">
+        <div style="display:flex;align-items:center;justify-content:center;color:#00E5FF;font-weight:800;font-size:4.2cqw;letter-spacing:.08em;padding:2.4cqw 4.6cqw 0;animation:neonFlash 2.2s ease-in-out infinite;text-align:center">
+          TOCA PARA LLAMAR A DELEON
+        </div>
+        <svg viewBox="0 0 24 24" style="width:6cqw;height:6cqw;fill:#00E5FF;animation:neonFlash 2.2s ease-in-out infinite"><path d="M4 9v6h4l5 5V4L8 9H4z"></path><path d="M16.5 12c0-1.5-.8-2.8-2-3.5v7c1.2-.7 2-2 2-3.5z"></path><path d="M14.5 4.5v1.9c2.3.8 4 3 4 5.6s-1.7 4.8-4 5.6v1.9c3.4-.9 6-4 6-7.5s-2.6-6.6-6-7.5z"></path></svg>
       </div>
     </div>
   </sc-if>
