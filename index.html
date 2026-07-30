@@ -12,7 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;600;800;900&amp;display=swap" rel="stylesheet">
 <style>
 html,body{margin:0;height:100%;overflow:hidden;background:#1a1614}
-body{display:flex;justify-content:center;align-items:stretch}
+body{display:flex;justify-content:center;align-items:stretch;background:#000 url(bg-escaparate.png) center/cover no-repeat}
+body::before{content:'';position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);z-index:0}
 a{color:inherit}a:hover{color:inherit}
 #phone{container-type:size}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.4cqh)}}
@@ -26,7 +27,7 @@ a{color:inherit}a:hover{color:inherit}
 @keyframes neonPulse{0%,100%{filter:brightness(1) drop-shadow(0 0 1.5cqw rgba(255,255,255,.15))}50%{filter:brightness(1.35) drop-shadow(0 0 3.5cqw rgba(255,60,120,.55))}}
 </style>
 </helmet>
-<div id="phone" style="position:relative;width:min(440px,100vw);height:100dvh;max-height:calc((100vw)*1.778);margin:0 auto;background:#f4f2ed url(bg-escaparate.png) center/cover no-repeat;overflow:hidden;font-family:Archivo,sans-serif;box-shadow:0 0 60px rgba(0,0,0,.5)" data-screen-label="Landing">
+<div id="phone" style="position:relative;width:min(calc(100dvh / 1.778),100vw);height:100dvh;max-height:calc((100vw)*1.778);margin:0 auto;background:#f4f2ed url(bg-escaparate.png) center/cover no-repeat;overflow:hidden;font-family:Archivo,sans-serif;box-shadow:0 0 80px rgba(0,0,0,.65);z-index:1" data-screen-label="Landing">
   <div style="position:absolute;inset:0;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E&quot;);opacity:.07;pointer-events:none;z-index:4"></div>
   <div style="position:absolute;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;padding:2.4cqh 4cqw;font-weight:800;font-size:2.9cqw;letter-spacing:0.22em;color:#141414;z-index:3" id="topbar">
     <span>DELEON</span><span>NUEVO SINGLE</span><span>06 AGOSTO</span>
